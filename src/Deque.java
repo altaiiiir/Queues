@@ -1,5 +1,4 @@
 import java.util.Iterator;
-import java.util.ListIterator;
 import java.util.NoSuchElementException;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
@@ -131,20 +130,23 @@ public class Deque<Item> implements Iterable<Item> {
 
         deque.addFirst(1);
         deque.removeLast();
-        System.out.println(deque.isEmpty());
+        System.out.println("Empty status: " + deque.isEmpty());
+
         for (int i = 0; i < 10; i++) {
             deque.addFirst(i);
             deque.addLast(i * 10);
         }
-        System.out.println(deque.removeLast());
-        System.out.println(deque.size());
-        while (!deque.isEmpty()) {
-            System.out.println(deque.removeFirst());
-        }
+
+        System.out.println("Removing last: " + deque.removeLast());
+        System.out.println("Current size: " + deque.size());
+
+        while (!deque.isEmpty())
+            System.out.println("Removing first: " + deque.removeFirst());
+
         deque.addFirst(1);
-        System.out.println(deque.removeFirst());
+        System.out.println("Removing first: " + deque.removeFirst());
         deque.addFirst(2);
-        System.out.println(deque.removeFirst());
+        System.out.println("Removing first: " + deque.removeFirst());
         deque.addLast(0);
         deque.removeFirst();
         deque.addLast(3);
